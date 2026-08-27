@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Roboto+Slab:wght@100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --text-secondary: #ffffff;
+  --accent: #ffffff;
+  --font-sans: 'Spectral', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: #ffffff;
+  font-size: 17.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
