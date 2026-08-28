@@ -129,7 +129,7 @@ function App() {
           <div className="about-text">
             <h2>About</h2>
             <p>
-              I'm a computer science student at UT Dallas interested in building software that combines thoughtful interfaces with interesting technical problems.
+              Studying Computer Science at UT Dallas. Builds full-stack web apps with a focus on AI integration, intuitive user experience, and thoughtful code structure.
             </p>
           </div>
         </div>
@@ -137,15 +137,15 @@ function App() {
 
       <section className="work">
         <div className="section-container">
-          <h2>Work Experience</h2>
+          <h2>Relevant Work Experience</h2>
           <div className="cards">
             <button className="card" onClick={() => setOpen('work-1')}>
               <div className="card-image">
                 <img src= {placeholder} alt="" />
               </div>
               <div className="card-content">
-                <h3>Job Title</h3>
-                <p>Company Name</p>
+                <h3>ClassFindr</h3>
+                <p>Full-stack Software Engineer</p>
               </div>
             </button>
             <button className="card" onClick={() => setOpen('work-2')}>
@@ -153,8 +153,8 @@ function App() {
                 <img src={placeholder} alt="" />
               </div>
               <div className="card-content">
-                <h3>Job Title</h3>
-                <p>Company Name</p>
+                <h3>WolfPack DNA</h3>
+                <p>Web Developer (Volunteer)</p>
               </div>
             </button>
           </div>
@@ -165,7 +165,7 @@ function App() {
         <div className="section-container2">
           <h2>Projects</h2>
           <div className="cards">
-                        <button className="card" onClick={() => setOpen('project-4')}>
+                        <button className="card" onClick={() => setOpen('project-5')}>
               <div className="card-image">
                 <img src={placeholder} alt="" />
               </div>
@@ -219,20 +219,34 @@ function App() {
 
       {open === 'work-1' && (
         <Modal
-          title="Job Title"
-          subtitle="Company Name"
-          date="2020 - Present"
-          description="Description of the role and responsibilities."
+          title="ClassFindr"
+          subtitle="Full Stack Software Engineer"
+          date="May 2026 - Aug 2026"
+          description="I worked as a full-stack software developer on ClassFindr, a platform designed to help students navigate the often complicated process of choosing courses, transferring credits, planning degrees, and working toward long-term academic goals.
+
+A major part of my work involved expanding the platform for K–12 and prospective college students. I helped develop a new user experience that allowed students to explore colleges and degree programs based on factors such as career goals, interests, location, cost, and time to graduation. I also implemented application-tracking functionality and considered how the K-12 experience could transition naturally into the existing college-student experience.
+
+Because I was developing a product intended to solve problems I had personally encountered, I frequently contributed my perspective during product and engineering discussions. I was also involved in user research alongside the product team, working with a K-12 student to gather feedback on the features I was developing. My own experience transferring colleges provided another perspective when evaluating the platform's academic-planning and transfer workflows.
+
+The project also gave me experience working within a professional software-development environment, including sprint planning, story reviews, pull requests, task coordination, and regular communication with the development and product teams. On the technical side, I worked primarily with Vue.js, TypeScript, Node.js, Prisma, and RabbitMQ."
           media={[{ type: 'image', src: placeholder }]}
           onClose={() => setOpen(null)}
         />
       )}
       {open === 'work-2' && (
         <Modal
-          title="Job Title"
-          subtitle="Company Name"
-          date="2018 - 2020"
-          description="Description of the role and responsibilities."
+          title="WolfPack DNA"
+          subtitle="Web Developer (Volunteer)"
+          date="May 2026 - Aug 2026"
+          description="Designed and developed a full-stack website from the ground up for a nonprofit specializing in DNA-based criminal case investigations, using React, TypeScript, Node.js, Google Firestore, and Google Cloud.
+
+Built a secure admin dashboard with authenticated login, enabling non-technical staff to independently manage cases, team members, images, and embedded donation links without developer assistance.
+
+Collaborated directly with the client throughout the design process, carefully considering UI/UX for a broad demographic to ensure the site was intuitive and accessible to all users.
+
+Integrated inquiry forms with Nodemailer to route client submissions directly to the team, and advised the organization on implementing a privacy policy to align with data collection requirements.
+
+Maintained the site post-launch, resolving bugs and inconsistencies surfaced through real user activity."
           media={[{ type: 'image', src: placeholder }]}
           onClose={() => setOpen(null)}
         />
@@ -278,12 +292,10 @@ The result was more than a static website: it became a system the club could mai
           title="Public Message Board"
           subtitle="Website"
           date="2025"
-          description="I developed this website for the Statistics and Data Science Club at SMU while serving as an executive member. I wanted to give the club a more unified identity while also creating a central place for members and prospective members to find information, resources, and opportunities.
-
-At the time, I was experimenting with React and saw the project as an opportunity to strengthen my front-end development skills. As development progressed, however, I realized that a website maintained entirely by a developer would not be practical for a student organization. I therefore expanded the project into a full-stack application, learning Node.js and Google Firestore to build administrative tools that allowed other club members to update the site themselves.
-
-The result was more than a static website: it became a system the club could maintain independently, with tools for managing its content and resources without requiring changes to the underlying code. I also incorporated creative elements into the experience, including a custom animated banner created in Blender."
-          media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
+          description="My goal with this project was to create a feature rich comment/messages system from scratch using the full-stack skills I had at the time. Working on this was a valuable learning experience as it helped me refine my backend skills, particularly with creating and using servers and databases. This app features file attachments/previews, nested replies, custom polls, and an intuitive user experience."
+          media={[{ type: 'image', src: '/messages1.png' },
+            {type: 'image', src: '/messages2.png'}
+          ]}
           onClose={() => setOpen(null)}
         />
       )}
@@ -292,11 +304,17 @@ The result was more than a static website: it became a system the club could mai
           title="Speak with an Elephant"
           subtitle="Website"
           date="2025"
-          description="I developed this website for the Statistics and Data Science Club at SMU while serving as an executive member. I wanted to give the club a more unified identity while also creating a central place for members and prospective members to find information, resources, and opportunities.
-
-At the time, I was experimenting with React and saw the project as an opportunity to strengthen my front-end development skills. As development progressed, however, I realized that a website maintained entirely by a developer would not be practical for a student organization. I therefore expanded the project into a full-stack application, learning Node.js and Google Firestore to build administrative tools that allowed other club members to update the site themselves.
-
-The result was more than a static website: it became a system the club could maintain independently, with tools for managing its content and resources without requiring changes to the underlying code. I also incorporated creative elements into the experience, including a custom animated banner created in Blender."
+          description="This was a project that I created when I competed in HackSMU VII. The prompt was about understanding and preserving the language of elephants. I decided to take a unique and fun approach to the challenge. I built an interactive app that practically lets you speak with an elephant! Development started with separating the 43 audio files given into the 212 distinct elephant sounds present using a Python script. Then using another Python script, I organized each of the 212 sounds into categories based on volume, dynamics, length, etc. Then using this categorization, I was able to assign each sound a distinct English translated meaning in such a way that the sounds can be arranged in a way that can produce almost any common English sentence. With the dictionary in place, I used Claude API to do the translation work, using the set dictionary as reference. Communication with an elephant has never been easier."
+          media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
+          onClose={() => setOpen(null)}
+        />
+      )}
+                       {open === 'project-5' && (
+        <Modal
+          title="Note to Self"
+          subtitle="App"
+          date="2026"
+          description="The vision for this app is to create a fully functioning DAW in your browser that lets you quickly and efficiently create complete tunes. Then the next step is to use this for a game where you create a tune based on term or theme and other players in the lobby will try to guess the word that the tune is trying to convey. In this party-game vision, I am building an app with an intricate use of MIDI technologies, servers, databases, and websockets. "
           media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
           onClose={() => setOpen(null)}
         />
