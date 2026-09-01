@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faFileAlt, faEnvelope, faXmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faFileAlt, faEnvelope, faXmark, faChevronLeft, faChevronRight, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import about from '/about.jpg'
 import './App.css'
 
@@ -14,6 +14,7 @@ function Modal({
   date,
   description,
   media,
+  link,
   onClose,
 }: {
   title?: string
@@ -21,6 +22,7 @@ function Modal({
   date?: string
   description?: string
   media?: Array<{ type: 'image' | 'video'; src: string }>
+  link?: string
   onClose: () => void
 }) {
   const [mediaIndex, setMediaIndex] = useState(0)
@@ -44,6 +46,17 @@ function Modal({
         <button className="modal-close" onClick={onClose} aria-label="Close">
           <FontAwesomeIcon icon={faXmark} />
         </button>
+        {link && (
+          <a
+            className="modal-link"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            <span>Open Link</span>
+          </a>
+        )}
         <div className="modal-scroll">
           {title && <h3 className="modal-title">{title}</h3>}
           {subtitle && <p className="modal-subtitle">{subtitle}</p>}
@@ -141,7 +154,7 @@ function App() {
           <div className="cards">
             <button className="card" onClick={() => setOpen('work-1')}>
               <div className="card-image">
-                <img src= {placeholder} alt="" />
+                <img src="/classfindr.jpg" alt="" />
               </div>
               <div className="card-content">
                 <h3>ClassFindr</h3>
@@ -150,7 +163,7 @@ function App() {
             </button>
             <button className="card" onClick={() => setOpen('work-2')}>
               <div className="card-image">
-                <img src={placeholder} alt="" />
+                <img src="/wolfpack.jpg" alt="" />
               </div>
               <div className="card-content">
                 <h3>WolfPack DNA</h3>
@@ -167,7 +180,7 @@ function App() {
           <div className="cards">
                         <button className="card" onClick={() => setOpen('project-5')}>
               <div className="card-image">
-                <img src={placeholder} alt="" />
+                <img src="/noteself.jpg" alt="" />
               </div>
               <div className="card-content">
                 <h3>Note to Self</h3>
@@ -238,6 +251,7 @@ The project also gave me experience working within a professional software-devel
           title="WolfPack DNA"
           subtitle="Web Developer (Volunteer)"
           date="May 2026 - Aug 2026"
+          link="https://wolfpackdna.org"
           description="Designed and developed a full-stack website from the ground up for a nonprofit specializing in DNA-based criminal case investigations, using React, TypeScript, Node.js, Google Firestore, and Google Cloud.
 
 Built a secure admin dashboard with authenticated login, enabling non-technical staff to independently manage cases, team members, images, and embedded donation links without developer assistance.
@@ -278,6 +292,7 @@ Despite the difficulties, I finished the game and was able to share it as intend
           title="SADS.club"
           subtitle="Website"
           date="2025"
+          link="https://sads.club"
           description="I developed this website for the Statistics and Data Science Club at SMU while serving as an executive member. I wanted to give the club a more unified identity while also creating a central place for members and prospective members to find information, resources, and opportunities.
 
 At the time, I was experimenting with React and saw the project as an opportunity to strengthen my front-end development skills. As development progressed, however, I realized that a website maintained entirely by a developer would not be practical for a student organization. I therefore expanded the project into a full-stack application, learning Node.js and Google Firestore to build administrative tools that allowed other club members to update the site themselves.
@@ -289,10 +304,12 @@ The result was more than a static website: it became a system the club could mai
       )}
            {open === 'project-3' && (
         <Modal
-          title="Public Message Board"
+          title="Full-Stack Messaging System"
           subtitle="Website"
           date="2025"
-          description="My goal with this project was to create a feature rich comment/messages system from scratch using the full-stack skills I had at the time. Working on this was a valuable learning experience as it helped me refine my backend skills, particularly with creating and using servers and databases. This app features file attachments/previews, nested replies, custom polls, and an intuitive user experience."
+          description="I built this feature-rich messaging and comment system from scratch as a reusable component for future projects. The goal was to strengthen my full-stack skills while creating a system that could eventually be integrated into other applications rather than remaining a standalone project.
+
+The project gave me hands-on experience designing and working with servers, databases, and backend architecture, while also focusing heavily on the user experience. Features include file attachments and previews, nested replies, custom polls, and intuitive message interactions. Building the system as a reusable foundation also required me to consider how its functionality could be adapted and integrated into larger applications.My goal with this project was to create a feature rich comment/messages system from scratch using the full-stack skills I had at the time. Working on this was a valuable learning experience as it helped me refine my backend skills, particularly with creating and using servers and databases. This app features file attachments/previews, nested replies, custom polls, and an intuitive user experience."
           media={[{ type: 'image', src: '/messages1.png' },
             {type: 'image', src: '/messages2.png'}
           ]}
@@ -304,7 +321,11 @@ The result was more than a static website: it became a system the club could mai
           title="Speak with an Elephant"
           subtitle="Website"
           date="2025"
-          description="This was a project that I created when I competed in HackSMU VII. The prompt was about understanding and preserving the language of elephants. I decided to take a unique and fun approach to the challenge. I built an interactive app that practically lets you speak with an elephant! Development started with separating the 43 audio files given into the 212 distinct elephant sounds present using a Python script. Then using another Python script, I organized each of the 212 sounds into categories based on volume, dynamics, length, etc. Then using this categorization, I was able to assign each sound a distinct English translated meaning in such a way that the sounds can be arranged in a way that can produce almost any common English sentence. With the dictionary in place, I used Claude API to do the translation work, using the set dictionary as reference. Communication with an elephant has never been easier."
+          description="Speak with an Elephant was a project I created for HackSMU VII, where the challenge centered on understanding and preserving elephant communication. I took a playful approach by building an interactive app that effectively lets users “speak” with an elephant.
+
+I began by processing the 43 provided audio files with Python, separating them into 212 distinct elephant sounds. I then developed another Python script to categorize the sounds based on characteristics such as volume, dynamics, and duration. Using these categories, I created a dictionary assigning each sound an English meaning, carefully structuring the vocabulary so the sounds could be combined to express a wide range of common sentences.
+
+With the dictionary established, I integrated the Claude API as a translation layer, using the custom sound-to-meaning dictionary as its reference. The result was an interactive system that could translate English into sequences of elephant sounds, allowing users to communicate with an elephant—or at least simulate doing so."
           media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
           onClose={() => setOpen(null)}
         />
@@ -314,7 +335,9 @@ The result was more than a static website: it became a system the club could mai
           title="Note to Self"
           subtitle="App"
           date="2026"
-          description="The vision for this app is to create a fully functioning DAW in your browser that lets you quickly and efficiently create complete tunes. Then the next step is to use this for a game where you create a tune based on term or theme and other players in the lobby will try to guess the word that the tune is trying to convey. In this party-game vision, I am building an app with an intricate use of MIDI technologies, servers, databases, and websockets. "
+          description="The vision for Note to Self is to build a fully functional digital audio workstation (DAW) that runs directly in the browser, allowing users to quickly compose complete musical pieces. The DAW will serve as the foundation for a multiplayer party game in which players receive a word or theme and must create a musical interpretation of it while others try to guess what they were given.
+
+The project combines creative game design with technically complex systems, including real-time MIDI device integration, audio composition, servers, databases, and WebSockets. I’m building the DAW from scratch as the foundation for the larger multiplayer experience."
           media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
           onClose={() => setOpen(null)}
         />

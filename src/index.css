@@ -28,6 +28,36 @@ body {
   min-height: 100vh;
 }
 
+/* Minimal, clean scrollbars: thin grey thumb, no track background */
+* {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(128, 128, 128, 0.6) transparent; /* Firefox: grey thumb, transparent track */
+}
+
+/* WebKit (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* no background behind the thumb */
+  border: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.6); /* thin grey thumb */
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.85);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
