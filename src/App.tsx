@@ -184,7 +184,7 @@ function App() {
               </div>
               <div className="card-content">
                 <h3>Note to Self</h3>
-                <p>App | 2026</p>
+                <p>Web App | 2026</p>
               </div>
             </button>
             <button className="card" onClick={() => setOpen('project-4')}>
@@ -193,7 +193,7 @@ function App() {
               </div>
               <div className="card-content">
                 <h3>Speak with an Elephant</h3>
-                <p>Website | 2026</p>
+                <p>Web App | 2026</p>
               </div>
             </button>
             <button className="card" onClick={() => setOpen('project-3')}>
@@ -202,7 +202,7 @@ function App() {
               </div>
               <div className="card-content">
                 <h3>Public Message Board</h3>
-                <p>Website | 2025</p>
+                <p>Web App | 2025</p>
               </div>
             </button>
             <button className="card" onClick={() => setOpen('project-2')}>
@@ -235,6 +235,7 @@ function App() {
           title="ClassFindr"
           subtitle="Full Stack Software Engineer"
           date="May 2026 - Aug 2026"
+          link="https://classfindr.com"
           description="I worked as a full-stack software developer on ClassFindr, a platform designed to help students navigate the often complicated process of choosing courses, transferring credits, planning degrees, and working toward long-term academic goals.
 
 A major part of my work involved expanding the platform for K–12 and prospective college students. I helped develop a new user experience that allowed students to explore colleges and degree programs based on factors such as career goals, interests, location, cost, and time to graduation. I also implemented application-tracking functionality and considered how the K-12 experience could transition naturally into the existing college-student experience.
@@ -242,7 +243,7 @@ A major part of my work involved expanding the platform for K–12 and prospecti
 Because I was developing a product intended to solve problems I had personally encountered, I frequently contributed my perspective during product and engineering discussions. I was also involved in user research alongside the product team, working with a K-12 student to gather feedback on the features I was developing. My own experience transferring colleges provided another perspective when evaluating the platform's academic-planning and transfer workflows.
 
 The project also gave me experience working within a professional software-development environment, including sprint planning, story reviews, pull requests, task coordination, and regular communication with the development and product teams. On the technical side, I worked primarily with Vue.js, TypeScript, Node.js, Prisma, and RabbitMQ."
-          media={[{ type: 'image', src: placeholder }]}
+          media={[{ type: 'image', src: "/cf1.png" }, { type: 'image', src: "/cf2.png" }]}
           onClose={() => setOpen(null)}
         />
       )}
@@ -251,7 +252,7 @@ The project also gave me experience working within a professional software-devel
           title="WolfPack DNA"
           subtitle="Web Developer (Volunteer)"
           date="May 2026 - Aug 2026"
-          link="https://wolfpackdna.org"
+          link="https://wolfpackdna.com"
           description="Designed and developed a full-stack website from the ground up for a nonprofit specializing in DNA-based criminal case investigations, using React, TypeScript, Node.js, Google Firestore, and Google Cloud.
 
 Built a secure admin dashboard with authenticated login, enabling non-technical staff to independently manage cases, team members, images, and embedded donation links without developer assistance.
@@ -270,6 +271,7 @@ Maintained the site post-launch, resolving bugs and inconsistencies surfaced thr
           title="Bubbo: The Lost Hat"
           subtitle="Video Game"
           date="May 17, 2021"
+          link="https://christiansheehan.itch.io/bubbo"
           description="Bubbo: The Lost Hat is a 2D platformer I developed in 2021 while attending high school virtually as a freshman. Although the game is now over five years old, it remains one of the projects I am most proud of because of the amount of work and personality I put into it. I built the game in Unity, created an original soundtrack, and designed every sprite and piece of artwork pixel by pixel. Development took roughly three months of working on and off while balancing school.
           
 The project began as a fan game for Bubbo, an inside-joke character that originated from a Microsoft Paint drawing and had developed an online community that created fan art around it. At the time, I was experimenting with game development and wanted to see how far I could take the character. I envisioned a 10-level 2D platformer with unique gameplay gimmicks and musical numbers throughout, essentially a video-game/musical hybrid.
@@ -305,8 +307,9 @@ The result was more than a static website: it became a system the club could mai
            {open === 'project-3' && (
         <Modal
           title="Full-Stack Messaging System"
-          subtitle="Website"
+          subtitle="Web App"
           date="2025"
+          link="https://messages.christiansheehan.com/"
           description="I built this feature-rich messaging and comment system from scratch as a reusable component for future projects. The goal was to strengthen my full-stack skills while creating a system that could eventually be integrated into other applications rather than remaining a standalone project.
 
 The project gave me hands-on experience designing and working with servers, databases, and backend architecture, while also focusing heavily on the user experience. Features include file attachments and previews, nested replies, custom polls, and intuitive message interactions. Building the system as a reusable foundation also required me to consider how its functionality could be adapted and integrated into larger applications.My goal with this project was to create a feature rich comment/messages system from scratch using the full-stack skills I had at the time. Working on this was a valuable learning experience as it helped me refine my backend skills, particularly with creating and using servers and databases. This app features file attachments/previews, nested replies, custom polls, and an intuitive user experience."
@@ -319,26 +322,28 @@ The project gave me hands-on experience designing and working with servers, data
                  {open === 'project-4' && (
         <Modal
           title="Speak with an Elephant"
-          subtitle="Website"
+          subtitle="Web App"
           date="2025"
+          link="https://elephant.christiansheehan.com"
           description="Speak with an Elephant was a project I created for HackSMU VII, where the challenge centered on understanding and preserving elephant communication. I took a playful approach by building an interactive app that effectively lets users “speak” with an elephant.
 
 I began by processing the 43 provided audio files with Python, separating them into 212 distinct elephant sounds. I then developed another Python script to categorize the sounds based on characteristics such as volume, dynamics, and duration. Using these categories, I created a dictionary assigning each sound an English meaning, carefully structuring the vocabulary so the sounds could be combined to express a wide range of common sentences.
 
 With the dictionary established, I integrated the Claude API as a translation layer, using the custom sound-to-meaning dictionary as its reference. The result was an interactive system that could translate English into sequences of elephant sounds, allowing users to communicate with an elephant—or at least simulate doing so."
-          media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
+          media={[{ type: 'image', src: '/elp.png' }]}
           onClose={() => setOpen(null)}
         />
       )}
                        {open === 'project-5' && (
         <Modal
           title="Note to Self"
-          subtitle="App"
+          subtitle="Web App"
           date="2026"
+          link="https://noteself.christiansheehan.com/"
           description="The vision for Note to Self is to build a fully functional digital audio workstation (DAW) that runs directly in the browser, allowing users to quickly compose complete musical pieces. The DAW will serve as the foundation for a multiplayer party game in which players receive a word or theme and must create a musical interpretation of it while others try to guess what they were given.
 
 The project combines creative game design with technically complex systems, including real-time MIDI device integration, audio composition, servers, databases, and WebSockets. I’m building the DAW from scratch as the foundation for the larger multiplayer experience."
-          media={[{ type: 'video', src: 'https://www.youtube.com/embed/SD5RZj9vL0Y' }]}
+          media={[{ type: 'image', src: '/ns.png' }]}
           onClose={() => setOpen(null)}
         />
       )}
