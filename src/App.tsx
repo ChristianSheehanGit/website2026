@@ -201,7 +201,7 @@ function App() {
                 <img src="/messages.png" alt="" />
               </div>
               <div className="card-content">
-                <h3>Public Message Board</h3>
+                <h3>Full-Stack Messaging System</h3>
                 <p>Web App | 2025</p>
               </div>
             </button>

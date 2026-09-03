@@ -8,8 +8,11 @@
 
 .app::before {
   content: '';
-  position: absolute;
-  inset: -50%;
+  /* Fixed to the viewport and oversized (-150% = a 4x4 layer) so the layer still
+     reaches every edge of the screen even after the 45deg rotation, on any
+     screen size or aspect ratio (portrait phones, tablets, ultrawide, etc.). */
+  position: fixed;
+  inset: -150%;
   pointer-events: none;
   background-image: url('/grid.png');
   background-size: 600px auto;
@@ -285,15 +288,23 @@
 }
 
 .modal-gallery-item img {
-  height: 400px;
+  /* Let the image shrink to the container width on narrow screens while
+     keeping its aspect ratio, and cap the height on wide/desktop screens. */
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
 }
 
 .modal-gallery-item iframe {
-  max-width: 100%;
-  height: 400px;
+  /* Full container width up to a 400px-tall / 16:9 cap, so it never gets
+     cut off on narrow screens and keeps its aspect ratio. */
+  width: 100%;
+  max-width: 711px; /* 400px tall at 16:9 */
   aspect-ratio: 16 / 9;
+  height: auto;
   border: 0;
   display: block;
 }
