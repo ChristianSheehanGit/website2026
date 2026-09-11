@@ -125,7 +125,7 @@ function App() {
             <FontAwesomeIcon icon={faLinkedin} />
             <span>LinkedIn</span>
           </a>
-          <a href="/resume.pdf">
+          <a target="_blank" href="/resume.pdf">
             <FontAwesomeIcon icon={faFileAlt} />
             <span>Resume</span>
           </a>
@@ -262,7 +262,7 @@ Collaborated directly with the client throughout the design process, carefully c
 Integrated inquiry forms with Nodemailer to route client submissions directly to the team, and advised the organization on implementing a privacy policy to align with data collection requirements.
 
 Maintained the site post-launch, resolving bugs and inconsistencies surfaced through real user activity."
-          media={[{ type: 'image', src: placeholder }]}
+          media={[{ type: 'video', src: 'https://www.youtube.com/embed/wjNmNyKj9UM?si=nL31vJurjNFcotOW' }]}
           onClose={() => setOpen(null)}
         />
       )}
